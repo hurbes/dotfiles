@@ -12,7 +12,7 @@ Ghostty, then Obsidian. Same palette, same font, same tab shape.
 <p align="center"><em>Ghostty. MonoLisa, block cursor, title still says Mac OS X Terminal.</em></p>
 
 <p align="center">
-  <img src="screenshots/obsidian-theme.jpg" alt="Obsidian with the Ghostty theme" width="900">
+  <img src="screenshots/obsidian-window.jpg" alt="Obsidian with the Ghostty theme" width="900">
 </p>
 <p align="center"><em>Obsidian. Ribbon gone, tabs like Ghostty, wallpaper only as a tint.</em></p>
 
