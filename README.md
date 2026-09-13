@@ -21,6 +21,14 @@ Ghostty, Obsidian, then the tiling. Same palette, same font, same tab shape.
 </p>
 <p align="center"><em>AeroSpace. Rules note on the left, Vorssaint settings on the right. The blue ring is JankyBorders.</em></p>
 
+## Wallpaper
+
+The forest behind those windows. Orange leaves, dark trees. [Download](https://github.com/hurbes/dotfiles/raw/main/wallpaper/forest.jpg).
+
+<p align="center">
+  <img src="wallpaper/forest.jpg" alt="Dark forest wallpaper with orange leaves" width="380">
+</p>
+
 ## What's here
 
 - `ghostty/config` is the terminal. MonoLisa, no ligatures, block cursor, a little blur.
