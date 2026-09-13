@@ -6,6 +6,7 @@ cask "obsidian"
 cask "nikitabobko/tap/aerospace"
 cask "vorssaint"
 cask "raycast"
+cask "leader-key"
 
 brew "felixkratz/formulae/borders"
 brew "fzf"

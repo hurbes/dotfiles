@@ -1,0 +1,6 @@
+#!/bin/zsh
+osascript -e '
+tell application "System Events"
+  set muted to output muted of (get volume settings)
+  set volume output muted (not muted)
+end tell'

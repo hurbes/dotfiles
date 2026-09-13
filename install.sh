@@ -8,12 +8,13 @@ usage() {
   cat <<'EOF'
 Usage: ./install.sh [--vault /path/to/obsidian-vault]
 
-Symlinks Ghostty, AeroSpace, zsh, and JankyBorders configs into place.
-If you pass --vault, the Obsidian theme, snippet, and plugin bits
-are copied into that vault's .obsidian folder.
-Vorssaint settings are a plist in vorssaint/. Import that from
-Vorssaint Settings > Advanced. The script will not do it for you.
-Raycast Store extensions are listed in raycast/extensions.json.
+Symlinks Ghostty, AeroSpace, zsh, JankyBorders, and helper scripts
+into place. Leader Key config is copied into Application Support
+with $HOME expanded. If you pass --vault, the Obsidian theme,
+snippet, and plugin bits are copied into that vault's .obsidian
+folder. Vorssaint settings are a plist in vorssaint/. Import that
+from Vorssaint Settings > Advanced. The script will not do it for
+you. Raycast Store extensions are listed in raycast/extensions.json.
 Install those from Raycast. Hotkeys are not in this repo.
 EOF
 }
@@ -74,6 +75,33 @@ link "$REPO/zsh/zshrc" "$HOME/.zshrc"
 link "$REPO/zsh/zshenv" "$HOME/.zshenv"
 link "$REPO/zsh/zprofile" "$HOME/.zprofile"
 link "$REPO/borders/bordersrc" "$HOME/.config/borders/bordersrc"
+
+for script in macos-lock macos-sleep macos-mute-toggle macos-dark-toggle macos-restart-finder; do
+  link "$REPO/bin/$script" "$HOME/.local/bin/$script"
+done
+
+python3 - "$REPO/leader-key/config.json" "$HOME/Library/Application Support/Leader Key/config.json" <<'PY'
+import os
+import sys
+from pathlib import Path
+
+src = Path(sys.argv[1])
+dest = Path(sys.argv[2])
+text = src.read_text().replace("$HOME", os.environ["HOME"])
+dest.parent.mkdir(parents=True, exist_ok=True)
+if dest.is_symlink():
+    dest.unlink()
+elif dest.exists():
+    if dest.read_text() == text:
+        print(f"Already up to date {dest}")
+        raise SystemExit(0)
+    bak = dest.with_name("config.json.bak")
+    bak.unlink(missing_ok=True)
+    dest.rename(bak)
+    print(f"Moved existing {dest} to {bak}")
+dest.write_text(text)
+print(f"Wrote {dest}")
+PY
 
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
   clone_plugin fzf-tab https://github.com/Aloxaf/fzf-tab

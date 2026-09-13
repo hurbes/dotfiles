@@ -1,0 +1,761 @@
+{
+  "type": "group",
+  "label": "Leader",
+  "actions": [
+    {
+      "key": "t",
+      "label": "Ghostty",
+      "type": "application",
+      "value": "/Applications/Ghostty.app"
+    },
+    {
+      "key": "c",
+      "label": "Cursor",
+      "type": "application",
+      "value": "/Applications/Cursor.app"
+    },
+    {
+      "key": "b",
+      "label": "Dia",
+      "type": "application",
+      "value": "/Applications/Dia.app"
+    },
+    {
+      "key": "w",
+      "label": "Workspaces",
+      "type": "group",
+      "actions": [
+        {
+          "key": "a",
+          "label": "Workspace A",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace A"
+        },
+        {
+          "key": "b",
+          "label": "Workspace B",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace B"
+        },
+        {
+          "key": "c",
+          "label": "Workspace C",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace C"
+        },
+        {
+          "key": "d",
+          "label": "Workspace D",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace D"
+        },
+        {
+          "key": "e",
+          "label": "Workspace E",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace E"
+        },
+        {
+          "key": "f",
+          "label": "Workspace F",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace F"
+        },
+        {
+          "key": "g",
+          "label": "Workspace G",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace G"
+        },
+        {
+          "key": "i",
+          "label": "Workspace I",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace I"
+        },
+        {
+          "key": "n",
+          "label": "Workspace N",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace N"
+        },
+        {
+          "key": "s",
+          "label": "Workspace S",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace S"
+        },
+        {
+          "key": "w",
+          "label": "Workspace W",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace W"
+        },
+        {
+          "key": "x",
+          "label": "Workspace X",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace X"
+        },
+        {
+          "key": "q",
+          "label": "Back / forth",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace-back-and-forth"
+        }
+      ]
+    },
+    {
+      "key": "a",
+      "label": "AeroSpace",
+      "type": "group",
+      "actions": [
+        {
+          "key": "b",
+          "label": "Back / forth",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace-back-and-forth"
+        },
+        {
+          "key": "g",
+          "label": "Focus back / forth",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace focus-back-and-forth"
+        },
+        {
+          "key": "w",
+          "label": "Swap windows",
+          "type": "group",
+          "actions": [
+            {
+              "key": "h",
+              "label": "Swap left",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around left"
+            },
+            {
+              "key": "j",
+              "label": "Swap down",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around down"
+            },
+            {
+              "key": "k",
+              "label": "Swap up",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around up"
+            },
+            {
+              "key": "l",
+              "label": "Swap right",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around right"
+            },
+            {
+              "key": "n",
+              "label": "Swap next",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around dfs-next"
+            },
+            {
+              "key": "p",
+              "label": "Swap prev",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace swap --swap-focus --wrap-around dfs-prev"
+            }
+          ]
+        },
+        {
+          "key": "m",
+          "label": "Move window to…",
+          "type": "group",
+          "actions": [
+            {
+              "key": "a",
+              "label": "WS A + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace A; workspace A'"
+            },
+            {
+              "key": "b",
+              "label": "WS B + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace B; workspace B'"
+            },
+            {
+              "key": "c",
+              "label": "WS C + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace C; workspace C'"
+            },
+            {
+              "key": "d",
+              "label": "WS D + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace D; workspace D'"
+            },
+            {
+              "key": "e",
+              "label": "WS E + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace E; workspace E'"
+            },
+            {
+              "key": "f",
+              "label": "WS F + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace F; workspace F'"
+            },
+            {
+              "key": "g",
+              "label": "WS G + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace G; workspace G'"
+            },
+            {
+              "key": "i",
+              "label": "WS I + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace I; workspace I'"
+            },
+            {
+              "key": "n",
+              "label": "WS N + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace N; workspace N'"
+            },
+            {
+              "key": "s",
+              "label": "WS S + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace S; workspace S'"
+            },
+            {
+              "key": "w",
+              "label": "WS W + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace W; workspace W'"
+            },
+            {
+              "key": "x",
+              "label": "WS X + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace X; workspace X'"
+            }
+          ]
+        },
+        {
+          "key": "z",
+          "label": "Resize",
+          "type": "group",
+          "actions": [
+            {
+              "key": "-",
+              "label": "Shrink",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace resize smart -50"
+            },
+            {
+              "key": "=",
+              "label": "Grow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace resize smart +50"
+            }
+          ]
+        },
+        {
+          "key": "f",
+          "label": "Focus",
+          "type": "group",
+          "actions": [
+            {
+              "key": "h",
+              "label": "Left",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace focus left"
+            },
+            {
+              "key": "j",
+              "label": "Down",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace focus down"
+            },
+            {
+              "key": "k",
+              "label": "Up",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace focus up"
+            },
+            {
+              "key": "l",
+              "label": "Right",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace focus right"
+            }
+          ]
+        },
+        {
+          "key": "v",
+          "label": "Move in layout",
+          "type": "group",
+          "actions": [
+            {
+              "key": "h",
+              "label": "Left",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace move left"
+            },
+            {
+              "key": "j",
+              "label": "Down",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace move down"
+            },
+            {
+              "key": "k",
+              "label": "Up",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace move up"
+            },
+            {
+              "key": "l",
+              "label": "Right",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace move right"
+            }
+          ]
+        },
+        {
+          "key": "l",
+          "label": "Layout",
+          "type": "group",
+          "actions": [
+            {
+              "key": "t",
+              "label": "Tiles",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace layout tiles horizontal vertical"
+            },
+            {
+              "key": "a",
+              "label": "Accordion",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace layout accordion horizontal vertical"
+            },
+            {
+              "key": "f",
+              "label": "Float / tile",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace layout floating tiling"
+            },
+            {
+              "key": "r",
+              "label": "Reset tree",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace flatten-workspace-tree"
+            },
+            {
+              "key": "s",
+              "label": "Service mode",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace mode service"
+            },
+            {
+              "key": "e",
+              "label": "Equalize sizes",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace balance-sizes"
+            },
+            {
+              "key": "u",
+              "label": "Fullscreen",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace fullscreen"
+            }
+          ]
+        },
+        {
+          "key": "s",
+          "label": "Split",
+          "type": "group",
+          "actions": [
+            {
+              "key": "h",
+              "label": "Horizontal",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace split horizontal"
+            },
+            {
+              "key": "v",
+              "label": "Vertical",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace split vertical"
+            },
+            {
+              "key": "o",
+              "label": "Opposite",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace split opposite"
+            }
+          ]
+        },
+        {
+          "key": "j",
+          "label": "Join with",
+          "type": "group",
+          "actions": [
+            {
+              "key": "h",
+              "label": "Left",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace join-with left"
+            },
+            {
+              "key": "j",
+              "label": "Down",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace join-with down"
+            },
+            {
+              "key": "k",
+              "label": "Up",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace join-with up"
+            },
+            {
+              "key": "l",
+              "label": "Right",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace join-with right"
+            }
+          ]
+        },
+        {
+          "key": "u",
+          "label": "Fullscreen",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace fullscreen"
+        },
+        {
+          "key": "x",
+          "label": "Close",
+          "type": "group",
+          "actions": [
+            {
+              "key": "x",
+              "label": "Close window",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace close"
+            },
+            {
+              "key": "o",
+              "label": "Close others",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace close-all-windows-but-current"
+            },
+            {
+              "key": "m",
+              "label": "macOS minimize",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace macos-native-minimize"
+            }
+          ]
+        },
+        {
+          "key": "r",
+          "label": "Reload config",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace reload-config"
+        }
+      ]
+    },
+    {
+      "key": "p",
+      "label": "Projects",
+      "type": "group",
+      "actions": [
+        {
+          "key": "n",
+          "label": "New Cursor window",
+          "type": "command",
+          "value": "open -na /Applications/Cursor.app"
+        },
+        {
+          "key": "t",
+          "label": "New Ghostty",
+          "type": "command",
+          "value": "open -na /Applications/Ghostty.app"
+        },
+        {
+          "key": "a",
+          "label": "Slot A: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace A; workspace A'"
+        },
+        {
+          "key": "b",
+          "label": "Slot B: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace B; workspace B'"
+        },
+        {
+          "key": "c",
+          "label": "Slot C: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace C; workspace C'"
+        },
+        {
+          "key": "d",
+          "label": "Slot D: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace D; workspace D'"
+        },
+        {
+          "key": "e",
+          "label": "Slot E: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace E; workspace E'"
+        },
+        {
+          "key": "s",
+          "label": "Slot S: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace S; workspace S'"
+        },
+        {
+          "key": "w",
+          "label": "Slot W: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace W; workspace W'"
+        },
+        {
+          "key": "x",
+          "label": "Slot X: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace X; workspace X'"
+        }
+      ]
+    },
+    {
+      "key": "o",
+      "label": "Open",
+      "type": "group",
+      "actions": [
+        {
+          "key": "c",
+          "label": "Cursor",
+          "type": "application",
+          "value": "/Applications/Cursor.app"
+        },
+        {
+          "key": "g",
+          "label": "Ghostty",
+          "type": "application",
+          "value": "/Applications/Ghostty.app"
+        },
+        {
+          "key": "d",
+          "label": "Dia",
+          "type": "application",
+          "value": "/Applications/Dia.app"
+        },
+        {
+          "key": "s",
+          "label": "Safari",
+          "type": "application",
+          "value": "/Applications/Safari.app"
+        },
+        {
+          "key": "w",
+          "label": "WhatsApp",
+          "type": "application",
+          "value": "/Applications/WhatsApp.app"
+        },
+        {
+          "key": "f",
+          "label": "Finder",
+          "type": "application",
+          "value": "/System/Library/CoreServices/Finder.app"
+        },
+        {
+          "key": ",",
+          "label": "Settings",
+          "type": "application",
+          "value": "/System/Applications/System Settings.app"
+        },
+        {
+          "key": "n",
+          "label": "Notes",
+          "type": "application",
+          "value": "/System/Applications/Notes.app"
+        },
+        {
+          "key": "k",
+          "label": "Calculator",
+          "type": "application",
+          "value": "/System/Applications/Calculator.app"
+        },
+        {
+          "key": "m",
+          "label": "Messages",
+          "type": "application",
+          "value": "/System/Applications/Messages.app"
+        },
+        {
+          "key": "a",
+          "label": "Activity Monitor",
+          "type": "application",
+          "value": "/System/Applications/Utilities/Activity Monitor.app"
+        }
+      ]
+    },
+    {
+      "key": "s",
+      "label": "System",
+      "type": "group",
+      "actions": [
+        {
+          "key": "l",
+          "label": "Lock screen",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-lock"
+        },
+        {
+          "key": "s",
+          "label": "Sleep",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-sleep"
+        },
+        {
+          "key": "m",
+          "label": "Mute toggle",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-mute-toggle"
+        },
+        {
+          "key": "d",
+          "label": "Dark mode toggle",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-dark-toggle"
+        },
+        {
+          "key": "f",
+          "label": "Restart Finder",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-restart-finder"
+        },
+        {
+          "key": ",",
+          "label": "System Settings",
+          "type": "application",
+          "value": "/System/Applications/System Settings.app"
+        },
+        {
+          "key": "a",
+          "label": "Activity Monitor",
+          "type": "application",
+          "value": "/System/Applications/Utilities/Activity Monitor.app"
+        }
+      ]
+    },
+    {
+      "key": "m",
+      "label": "Media",
+      "type": "group",
+      "actions": [
+        {
+          "key": "m",
+          "label": "Music",
+          "type": "application",
+          "value": "/System/Applications/Music.app"
+        },
+        {
+          "key": "p",
+          "label": "Play / pause",
+          "type": "command",
+          "value": "osascript -e 'tell application \"Music\" to playpause'"
+        },
+        {
+          "key": "u",
+          "label": "Mute toggle",
+          "type": "command",
+          "value": "$HOME/.local/bin/macos-mute-toggle"
+        }
+      ]
+    },
+    {
+      "key": "u",
+      "label": "URLs",
+      "type": "group",
+      "actions": [
+        {
+          "key": "g",
+          "label": "GitHub",
+          "type": "url",
+          "value": "https://github.com"
+        },
+        {
+          "key": "y",
+          "label": "YouTube",
+          "type": "url",
+          "value": "https://youtube.com"
+        },
+        {
+          "key": "m",
+          "label": "Gmail",
+          "type": "url",
+          "value": "https://mail.google.com"
+        },
+        {
+          "key": "c",
+          "label": "ChatGPT",
+          "type": "url",
+          "value": "https://chatgpt.com"
+        },
+        {
+          "key": "a",
+          "label": "AeroSpace docs",
+          "type": "url",
+          "value": "https://nikitabobko.github.io/AeroSpace/guide"
+        }
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Folders",
+      "type": "group",
+      "actions": [
+        {
+          "key": "h",
+          "label": "Home",
+          "type": "folder",
+          "value": "$HOME"
+        },
+        {
+          "key": "d",
+          "label": "Downloads",
+          "type": "folder",
+          "value": "$HOME/Downloads"
+        },
+        {
+          "key": "c",
+          "label": "Desktop",
+          "type": "folder",
+          "value": "$HOME/Desktop"
+        },
+        {
+          "key": "a",
+          "label": "Applications",
+          "type": "folder",
+          "value": "/Applications"
+        },
+        {
+          "key": "l",
+          "label": "Leader Key config",
+          "type": "folder",
+          "value": "$HOME/Library/Application Support/Leader Key"
+        }
+      ]
+    }
+  ]
+}
