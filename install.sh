@@ -13,6 +13,8 @@ If you pass --vault, the Obsidian theme, snippet, and plugin bits
 are copied into that vault's .obsidian folder.
 Vorssaint settings are a plist in vorssaint/. Import that from
 Vorssaint Settings > Advanced. The script will not do it for you.
+Raycast Store extensions are listed in raycast/extensions.json.
+Install those from Raycast. Hotkeys are not in this repo.
 EOF
 }
 

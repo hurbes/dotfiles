@@ -1,0 +1,61 @@
+{
+  "comment": "Store extensions installed on this Mac. Hotkeys, aliases, clipboard, and AI chats are not here. Raycast keeps those in encrypted databases.",
+  "extensions": [
+    {
+      "title": "Google Translate",
+      "author": "gebeto",
+      "name": "translate",
+      "url": "https://www.raycast.com/gebeto/translate",
+      "install": "raycast://extensions/gebeto/translate"
+    },
+    {
+      "title": "Downloads Manager",
+      "author": "thomas",
+      "name": "downloads-manager",
+      "url": "https://www.raycast.com/thomas/downloads-manager",
+      "install": "raycast://extensions/thomas/downloads-manager"
+    },
+    {
+      "title": "Spotify Player",
+      "author": "mattisssa",
+      "name": "spotify-player",
+      "url": "https://www.raycast.com/mattisssa/spotify-player",
+      "install": "raycast://extensions/mattisssa/spotify-player"
+    },
+    {
+      "title": "Color Picker",
+      "author": "thomas",
+      "name": "color-picker",
+      "url": "https://www.raycast.com/thomas/color-picker",
+      "install": "raycast://extensions/thomas/color-picker"
+    },
+    {
+      "title": "Ghostty",
+      "author": "jarry_chung",
+      "name": "ghostty",
+      "url": "https://www.raycast.com/jarry_chung/ghostty",
+      "install": "raycast://extensions/jarry_chung/ghostty"
+    },
+    {
+      "title": "Lorem Ipsum",
+      "author": "AntonNiklasson",
+      "name": "lorem-ipsum",
+      "url": "https://www.raycast.com/AntonNiklasson/lorem-ipsum",
+      "install": "raycast://extensions/AntonNiklasson/lorem-ipsum"
+    },
+    {
+      "title": "Speedtest",
+      "author": "tonka3000",
+      "name": "speedtest",
+      "url": "https://www.raycast.com/tonka3000/speedtest",
+      "install": "raycast://extensions/tonka3000/speedtest"
+    },
+    {
+      "title": "IP Geolocation",
+      "author": "koinzhang",
+      "name": "ip-geolocation",
+      "url": "https://www.raycast.com/koinzhang/ip-geolocation",
+      "install": "raycast://extensions/koinzhang/ip-geolocation"
+    }
+  ]
+}

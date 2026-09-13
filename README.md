@@ -1,10 +1,10 @@
 # Dotfiles
 
-Mac configs I actually use. Ghostty for the terminal, AeroSpace for tiling, Oh My Zsh, and an Obsidian theme sampled from Ghostty's default dark palette so the two don't look like they came from different decades.
+Mac configs I actually use. Ghostty for the terminal, AeroSpace for tiling, Vorssaint for the menu bar, Raycast for jumping around, Oh My Zsh, and an Obsidian theme sampled from Ghostty's default dark palette so the two don't look like they came from different decades.
 
 ## Screenshots
 
-Ghostty, then Obsidian. Same palette, same font, same tab shape.
+Ghostty, Obsidian, then the tiling. Same palette, same font, same tab shape.
 
 <p align="center">
   <img src="screenshots/ghostty-terminal.jpg" alt="Ghostty terminal" width="900">
@@ -16,6 +16,11 @@ Ghostty, then Obsidian. Same palette, same font, same tab shape.
 </p>
 <p align="center"><em>Obsidian. Ribbon gone, tabs like Ghostty, wallpaper only as a tint.</em></p>
 
+<p align="center">
+  <img src="screenshots/aerospace-vorssaint.jpg" alt="AeroSpace tiling Obsidian and Vorssaint" width="900">
+</p>
+<p align="center"><em>AeroSpace. Rules note on the left, Vorssaint settings on the right. The blue ring is JankyBorders.</em></p>
+
 ## What's here
 
 - `ghostty/config` is the terminal. MonoLisa, no ligatures, block cursor, a little blur.
@@ -24,6 +29,7 @@ Ghostty, then Obsidian. Same palette, same font, same tab shape.
 - `obsidian/` is the Ghostty theme, a chrome snippet that hides the ribbon, and the plugin settings that make the window feel closer to the terminal.
 - `borders/bordersrc` is JankyBorders. AeroSpace starts it so the focused window has a ring.
 - `vorssaint/Vorssaint Settings.plist` is a Vorssaint settings backup. Shortcuts, menu bar meters, screenshot keys, that kind of thing. Not clipboard history, not Scratchpad notes.
+- `raycast/extensions.json` is the Store extensions I keep installed. Translate, Downloads Manager, Spotify Player, Color Picker, Ghostty, Lorem Ipsum, Speedtest, IP Geolocation. Hotkeys and aliases live in Raycast's encrypted databases, so they are not in this repo. Clipboard history and AI chats stay off GitHub.
 
 MonoLisa is a paid font. Both Ghostty and Obsidian name it. If you don't have it, change the font lines.
 
@@ -51,6 +57,8 @@ Oh My Zsh is separate. Install that first, then rerun `./install.sh` so it can c
 In Obsidian, install Hider, Lacewing, Style Settings, and Mermaid Zoom from the community list. `mermaid-zoom-persist` is a small local plugin in this repo, so the copy step is enough.
 
 Vorssaint is imported from inside the app, not by the script. Open Settings, Advanced, Import settings, and pick `vorssaint/Vorssaint Settings.plist`. It restarts the app. Clipboard history and Scratchpad stay on the old Mac.
+
+Raycast is the same story. Install the app, then install each extension from `raycast/extensions.json`. You can search the Store or open the `install` deeplink once Raycast is running. For hotkeys and aliases, run Export Settings & Data in Raycast, uncheck Clipboard History and AI, and keep that `.rayconfig` somewhere private. Don't put it in this repo.
 
 ## Workspaces
 
