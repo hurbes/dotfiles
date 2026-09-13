@@ -1,0 +1,224 @@
+/* Ghostty macos-titlebar-style = tabs */
+
+body {
+  font-feature-settings: "liga" 0, "calt" 0, "dlig" 0;
+  font-variant-ligatures: none;
+}
+
+.workspace-ribbon,
+.workspace-ribbon.mod-left,
+.workspace-ribbon.mod-right,
+.workspace-tab-header-tab-list {
+  display: none !important;
+}
+
+body.is-hidden-frameless:not(.is-fullscreen):not(.is-popout-window) {
+  --ribbon-width: 0px;
+}
+
+.theme-dark {
+  --tab-background: rgba(255, 255, 255, 0.06);
+  --tab-background-active: rgba(255, 255, 255, 0.12);
+}
+
+/* Blur only on static chrome. Blur on .cm-scroller / preview causes scroll flicker. */
+body.theme-dark .app-container,
+body.theme-dark .horizontal-main-container,
+body.theme-dark .workspace {
+  background-color: rgba(23, 23, 23, 0.94) !important;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+body.theme-dark .mod-root,
+body.theme-dark .workspace-leaf,
+body.theme-dark .workspace-leaf-content,
+body.theme-dark .view-content,
+body.theme-dark .markdown-source-view,
+body.theme-dark .markdown-preview-view,
+body.theme-dark .cm-editor,
+body.theme-dark .cm-scroller {
+  background-color: rgba(23, 23, 23, 0.96) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+body.theme-dark .cm-scroller,
+body.theme-dark .markdown-preview-view {
+  overflow-anchor: none;
+}
+
+body.theme-dark .workspace-split.mod-left-split,
+body.theme-dark .workspace-split.mod-right-split,
+body.theme-dark .workspace-sidedock-vault-profile,
+body.theme-dark .status-bar {
+  background-color: rgba(16, 16, 16, 0.96) !important;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top .workspace-tab-header-container,
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .mod-root .workspace-tab-header-container {
+  height: 52px;
+  padding-top: 0;
+  align-items: center;
+  background-color: rgba(14, 14, 14, 0.82) !important;
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+  padding-left: calc(var(--frame-left-space) + 8px);
+}
+
+.workspace-tab-header-container-inner {
+  margin: 0;
+  gap: 6px;
+  align-items: center;
+}
+
+.workspace .mod-root .workspace-tab-header {
+  height: 28px;
+  max-width: 240px;
+  border-radius: 8px;
+  padding: 0 8px !important;
+  box-shadow: none !important;
+  background: var(--tab-background);
+}
+
+.workspace .mod-root .workspace-tab-header.is-active {
+  background-color: var(--tab-background-active);
+}
+
+.workspace-tab-header-inner::after,
+.workspace-tab-header::after,
+.workspace-tab-header::before {
+  display: none;
+}
+
+.workspace-tab-header-inner-icon {
+  display: none;
+}
+
+.workspace-tab-header-inner-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+  display: none;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-close-button {
+  display: flex;
+}
+
+.workspace-tab-header-new-tab {
+  margin-left: 2px;
+}
+
+.view-header {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal,
+.prompt,
+.suggestion-container,
+.menu {
+  background-color: rgba(23, 23, 23, 0.95) !important;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid #333333;
+}
+
+.status-bar {
+  font-size: 12px;
+}
+
+/* File explorer / search / bookmarks toolbar */
+.workspace-split.mod-left-split .nav-header,
+.workspace-split.mod-right-split .nav-header {
+  padding: 8px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.workspace-split.mod-left-split .nav-buttons-container,
+.workspace-split.mod-right-split .nav-buttons-container {
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+.workspace-split.mod-left-split .nav-header .clickable-icon,
+.workspace-split.mod-right-split .nav-header .clickable-icon {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 8px;
+  color: #c8c8c8;
+  opacity: 0.72;
+}
+
+.workspace-split.mod-left-split .nav-header .clickable-icon:hover,
+.workspace-split.mod-right-split .nav-header .clickable-icon:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f2f2f2;
+  opacity: 1;
+}
+
+.workspace-split.mod-left-split .nav-header .clickable-icon.is-active,
+.workspace-split.mod-right-split .nav-header .clickable-icon.is-active {
+  background-color: rgba(255, 255, 255, 0.12);
+  opacity: 1;
+}
+
+.workspace-split.mod-left-split .nav-header svg,
+.workspace-split.mod-right-split .nav-header svg {
+  width: 16px;
+  height: 16px;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding: 6px 8px 12px;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .tree-item-self {
+  font-size: 13px;
+  border-radius: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .tree-item-self:hover,
+.workspace-leaf-content[data-type="file-explorer"] .tree-item-self.is-active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .search-input-container input {
+  font-size: 13px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.markdown-preview-view .mermaid,
+.markdown-source-view .mermaid {
+  overflow: visible;
+}

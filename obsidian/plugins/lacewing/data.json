@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 5,
+  "defaultOverlayOpacity": 0.85,
+  "defaultContrastShield": "none",
+  "smartFadeDefaults": {
+    "enabled": false,
+    "activeOpacity": 0.92,
+    "idleOpacity": 0.6,
+    "idleDelayMs": 5000,
+    "fadeOnBlur": true,
+    "fadeOnInactivity": false,
+    "brightenOnKeyboard": true,
+    "brightenOnPointer": true,
+    "transitionDurationMs": 180,
+    "respectReducedMotion": true
+  },
+  "main": {
+    "opacity": 0.97,
+    "pinned": false,
+    "contrastShield": "medium"
+  },
+  "notePopouts": {}
+}

@@ -1,0 +1,14 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "Ghostty",
+  "enabledCssSnippets": [
+    "ghostty-chrome"
+  ],
+  "baseFontSize": 14,
+  "interfaceFontFamily": "MonoLisa Variable",
+  "textFontFamily": "MonoLisa Variable",
+  "monospaceFontFamily": "MonoLisa Variable",
+  "accentColor": "#b8b4b0",
+  "translucency": true,
+  "nativeMenus": true
+}

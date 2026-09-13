@@ -1,0 +1,9 @@
+{
+  "id": "mermaid-zoom-persist",
+  "name": "Mermaid Zoom Persist",
+  "version": "1.0.0",
+  "minAppVersion": "1.8.7",
+  "description": "Remember Mermaid Zoom scale per diagram across source mode, tab switches, and restarts.",
+  "author": "Arnab",
+  "isDesktopOnly": false
+}

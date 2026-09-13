@@ -1,0 +1,129 @@
+# AeroSpace config — tuned for M2 Max MacBook (single display, Ghostty + Cursor)
+# Docs: https://nikitabobko.github.io/AeroSpace/guide
+
+config-version = 2
+
+# JankyBorders highlights the focused window; it skips launch if already running
+after-startup-command = ['exec-and-forget borders']
+
+start-at-login = true
+auto-reload-config = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+
+# Letter workspaces — skip H/J/K/L (focus/move) like the AeroSpace default
+persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "S", "W", "X"]
+
+on-mode-changed = []
+
+focus-follows-mouse.enabled = false
+key-mapping.preset = 'qwerty'
+
+# Subtle gaps — readable on Retina without wasting space
+gaps.inner.horizontal = 14
+gaps.inner.vertical =   14
+gaps.outer.left =       14
+gaps.outer.bottom =     14
+gaps.outer.top =        14
+gaps.outer.right =      14
+
+# New windows go to a designated workspace (first matching callback wins).
+# Float utilities stay on the current workspace. Assigned apps are moved, but
+# focus stays put — add --focus-follows-window if opening an app should also
+# switch you to its workspace.
+on-window-detected = [
+    { if = 'test %{app-bundle-id} = com.apple.systempreferences', run = 'layout floating' },
+    { if = 'test %{app-bundle-id} = com.apple.systemsettings', run = 'layout floating' },
+    { if = 'test %{app-bundle-id} = com.apple.finder', run = 'layout floating' },
+    { if = 'test %{app-bundle-id} = com.apple.calculator', run = 'layout floating' },
+
+    { if = 'test %{app-bundle-id} = com.todesktop.230313mzl4w4u92', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = company.thebrowser.dia || test %{app-bundle-id} = com.brave.Browser || test %{app-bundle-id} = com.apple.Safari', run = 'move-node-to-workspace B' },
+    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'move-node-to-workspace G' },
+    { if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp', run = 'move-node-to-workspace W' },
+    { if = 'test %{app-bundle-id} = com.anysphere.sand', run = 'move-node-to-workspace F' },
+    { if = 'test %{app-bundle-id} = com.docker.docker', run = 'move-node-to-workspace D' },
+    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace E' },
+    { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
+    { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
+]
+
+[mode.main.binding]
+    # i3-style terminal (Ghostty)
+    alt-enter = 'exec-and-forget open -na Ghostty'
+
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    alt-ctrl-h = 'swap --swap-focus --wrap-around left'
+    alt-ctrl-j = 'swap --swap-focus --wrap-around down'
+    alt-ctrl-k = 'swap --swap-focus --wrap-around up'
+    alt-ctrl-l = 'swap --swap-focus --wrap-around right'
+
+    alt-ctrl-f = 'fullscreen'
+    alt-ctrl-b = 'balance-sizes'
+    alt-period = 'focus-back-and-forth'
+
+    alt-a = 'workspace A'
+    alt-b = 'workspace B'
+    alt-c = 'workspace C'
+    alt-d = 'workspace D'
+    alt-e = 'workspace E'
+    alt-f = 'workspace F'
+    alt-g = 'workspace G'
+    alt-i = 'workspace I'
+    alt-n = 'workspace N'
+    alt-s = 'workspace S'
+    alt-w = 'workspace W'
+    alt-x = 'workspace X'
+
+    # Move window to workspace and follow (pairs with Leader Key w … / a m … / p a–e)
+    alt-shift-a = 'move-node-to-workspace A; workspace A'
+    alt-shift-b = 'move-node-to-workspace B; workspace B'
+    alt-shift-c = 'move-node-to-workspace C; workspace C'
+    alt-shift-d = 'move-node-to-workspace D; workspace D'
+    alt-shift-e = 'move-node-to-workspace E; workspace E'
+    alt-shift-f = 'move-node-to-workspace F; workspace F'
+    alt-shift-g = 'move-node-to-workspace G; workspace G'
+    alt-shift-i = 'move-node-to-workspace I; workspace I'
+    alt-shift-n = 'move-node-to-workspace N; workspace N'
+    alt-shift-s = 'move-node-to-workspace S; workspace S'
+    alt-shift-w = 'move-node-to-workspace W; workspace W'
+    alt-shift-x = 'move-node-to-workspace X; workspace X'
+
+    alt-tab = 'workspace-back-and-forth'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main']
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
