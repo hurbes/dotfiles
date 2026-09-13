@@ -7,17 +7,17 @@ Mac configs I actually use. Ghostty for the terminal, AeroSpace for tiling, Oh M
 Ghostty first. Then Obsidian with the same font, tabs, and blur. The last one is the desk, mostly so you can see the wallpaper through the windows.
 
 <p align="center">
-  <img src="screenshots/ghostty.jpg" alt="Ghostty terminal" width="900">
+  <img src="screenshots/ghostty-terminal.jpg" alt="Ghostty terminal" width="900">
 </p>
 <p align="center"><em>Ghostty. MonoLisa, block cursor, title still says Mac OS X Terminal.</em></p>
 
 <p align="center">
-  <img src="screenshots/obsidian.jpg" alt="Obsidian with Ghostty-like tabs" width="700">
+  <img src="screenshots/obsidian-theme.jpg" alt="Obsidian with Ghostty-like tabs" width="700">
 </p>
 <p align="center"><em>Obsidian. Ribbon gone, tabs like Ghostty, wallpaper only as a tint.</em></p>
 
 <p align="center">
-  <img src="screenshots/desktop.jpg" alt="Desktop with translucent windows" width="900">
+  <img src="screenshots/aerospace-desktop.jpg" alt="AeroSpace desktop with translucent windows" width="900">
 </p>
 <p align="center"><em>Same forest wallpaper sitting behind the windows. AeroSpace puts a blue ring on whatever has focus.</em></p>
 
