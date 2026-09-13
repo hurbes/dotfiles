@@ -11,6 +11,8 @@ Usage: ./install.sh [--vault /path/to/obsidian-vault]
 Symlinks Ghostty, AeroSpace, zsh, and JankyBorders configs into place.
 If you pass --vault, the Obsidian theme, snippet, and plugin bits
 are copied into that vault's .obsidian folder.
+Vorssaint settings are a plist in vorssaint/. Import that from
+Vorssaint Settings > Advanced. The script will not do it for you.
 EOF
 }
 

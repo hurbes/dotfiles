@@ -28,6 +28,7 @@ Ghostty first. Then Obsidian with the same font, tabs, and blur. The last one is
 - `zsh/` is Oh My Zsh with robbyrussell, a big history, and fzf-tab so Tab is a fuzzy finder instead of a menu.
 - `obsidian/` is the Ghostty theme, a chrome snippet that hides the ribbon, and the plugin settings that make the window feel closer to the terminal.
 - `borders/bordersrc` is JankyBorders. AeroSpace starts it so the focused window has a ring.
+- `vorssaint/Vorssaint Settings.plist` is a Vorssaint settings backup. Shortcuts, menu bar meters, screenshot keys, that kind of thing. Not clipboard history, not Scratchpad notes.
 
 MonoLisa is a paid font. Both Ghostty and Obsidian name it. If you don't have it, change the font lines.
 
@@ -53,6 +54,8 @@ brew bundle
 Oh My Zsh is separate. Install that first, then rerun `./install.sh` so it can clone fzf-tab, zsh-autosuggestions, and zsh-syntax-highlighting. You also want `fzf`, `zoxide`, and `eza` on PATH, which the Brewfile covers.
 
 In Obsidian, install Hider, Lacewing, Style Settings, and Mermaid Zoom from the community list. `mermaid-zoom-persist` is a small local plugin in this repo, so the copy step is enough.
+
+Vorssaint is imported from inside the app, not by the script. Open Settings, Advanced, Import settings, and pick `vorssaint/Vorssaint Settings.plist`. It restarts the app. Clipboard history and Scratchpad stay on the old Mac.
 
 ## Workspaces
 
