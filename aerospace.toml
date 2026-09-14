@@ -51,7 +51,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'move-node-to-workspace G' },
     { if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp', run = 'move-node-to-workspace W' },
     { if = 'test %{app-bundle-id} = com.anysphere.sand', run = 'move-node-to-workspace F' },
-    { if = 'test %{app-bundle-id} = com.docker.docker', run = 'move-node-to-workspace D' },
+    { if = 'test %{app-bundle-id} = com.docker.docker || test %{app-bundle-id} = com.electron.dockerdesktop', run = 'move-node-to-workspace D' },
     { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace E' },
     { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
     { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
