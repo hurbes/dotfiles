@@ -99,9 +99,9 @@
         },
         {
           "key": "q",
-          "label": "Back / forth",
+          "label": "Workspace Q",
           "type": "command",
-          "value": "/opt/homebrew/bin/aerospace workspace-back-and-forth"
+          "value": "/opt/homebrew/bin/aerospace workspace Q"
         }
       ]
     },
@@ -223,6 +223,12 @@
               "label": "WS N + follow",
               "type": "command",
               "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace N; workspace N'"
+            },
+            {
+              "key": "q",
+              "label": "WS Q + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace Q; workspace Q'"
             },
             {
               "key": "s",
@@ -515,6 +521,12 @@
           "label": "Slot E: move + go",
           "type": "command",
           "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace E; workspace E'"
+        },
+        {
+          "key": "q",
+          "label": "Slot Q: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace Q; workspace Q'"
         },
         {
           "key": "s",

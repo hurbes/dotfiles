@@ -20,7 +20,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Letter workspaces — skip H/J/K/L (focus/move) like the AeroSpace default
-persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "S", "W", "X"]
+persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "W", "X"]
 
 on-mode-changed = []
 
@@ -46,6 +46,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.apple.calculator', run = 'layout floating' },
 
     { if = 'test %{app-bundle-id} = com.todesktop.230313mzl4w4u92', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = com.google.antigravity', run = 'move-node-to-workspace A' },
     { if = 'test %{app-bundle-id} = company.thebrowser.dia || test %{app-bundle-id} = com.brave.Browser || test %{app-bundle-id} = com.apple.Safari', run = 'move-node-to-workspace B' },
     { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'move-node-to-workspace G' },
     { if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp', run = 'move-node-to-workspace W' },
@@ -54,7 +55,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace E' },
     { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
     { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
-    { if = 'test %{app-bundle-id} = org.freedownloadmanager.fdm6', run = 'move-node-to-workspace S' },
+    { if = 'test %{app-bundle-id} = org.freedownloadmanager.fdm6', run = 'move-node-to-workspace Q' },
 ]
 
 [mode.main.binding]
@@ -95,6 +96,7 @@ on-window-detected = [
     alt-g = 'workspace G'
     alt-i = 'workspace I'
     alt-n = 'workspace N'
+    alt-q = 'workspace Q'
     alt-s = 'workspace S'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
@@ -109,6 +111,7 @@ on-window-detected = [
     alt-shift-g = 'move-node-to-workspace G; workspace G'
     alt-shift-i = 'move-node-to-workspace I; workspace I'
     alt-shift-n = 'move-node-to-workspace N; workspace N'
+    alt-shift-q = 'move-node-to-workspace Q; workspace Q'
     alt-shift-s = 'move-node-to-workspace S; workspace S'
     alt-shift-w = 'move-node-to-workspace W; workspace W'
     alt-shift-x = 'move-node-to-workspace X; workspace X'
