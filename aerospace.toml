@@ -54,6 +54,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace E' },
     { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
     { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
+    { if = 'test %{app-bundle-id} = org.freedownloadmanager.fdm6', run = 'move-node-to-workspace S' },
 ]
 
 [mode.main.binding]

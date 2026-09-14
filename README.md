@@ -82,6 +82,7 @@ I skip H, J, K, and L because those keys move focus.
 | G | Ghostty |
 | I | Imark |
 | N | Obsidian |
+| S | Free Download Manager |
 | W | WhatsApp |
 
 The rest are free. Alt plus the letter jumps to it. Alt-shift plus the letter takes the current window with you.
