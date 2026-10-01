@@ -68,9 +68,18 @@ clone_plugin() {
 }
 
 link "$REPO/aerospace.toml" "$HOME/.aerospace.toml"
+# Ghostty reads a single config: ~/.config/ghostty/config. Linking the same
+# file into ~/Library/Application Support/... as well makes Ghostty load it
+# multiple times and duplicate every list-style key (font-feature, keybind).
+# Clean up any legacy links/files there from older installs.
 link "$REPO/ghostty/config" "$HOME/.config/ghostty/config"
-link "$REPO/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
-link "$REPO/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+for legacy in "$HOME/Library/Application Support/com.mitchellh.ghostty/config" \
+              "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"; do
+  if [[ -L "$legacy" || -e "$legacy" ]]; then
+    mv "$legacy" "${legacy}.bak"
+    echo "Moved legacy $legacy to ${legacy}.bak"
+  fi
+done
 link "$REPO/zsh/zshrc" "$HOME/.zshrc"
 link "$REPO/zsh/zshenv" "$HOME/.zshenv"
 link "$REPO/zsh/zprofile" "$HOME/.zprofile"

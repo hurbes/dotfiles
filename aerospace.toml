@@ -48,7 +48,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.todesktop.230313mzl4w4u92', run = 'move-node-to-workspace C' },
     { if = 'test %{app-bundle-id} = com.google.antigravity', run = 'move-node-to-workspace A' },
     { if = 'test %{app-bundle-id} = company.thebrowser.dia || test %{app-bundle-id} = com.brave.Browser || test %{app-bundle-id} = com.apple.Safari', run = 'move-node-to-workspace B' },
-    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = 'move-node-to-workspace G' },
+    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = ['layout floating', 'move-node-to-workspace G'] },
     { if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp', run = 'move-node-to-workspace W' },
     { if = 'test %{app-bundle-id} = com.anysphere.sand', run = 'move-node-to-workspace F' },
     { if = 'test %{app-bundle-id} = com.docker.docker || test %{app-bundle-id} = com.electron.dockerdesktop', run = 'move-node-to-workspace D' },

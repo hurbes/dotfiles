@@ -84,6 +84,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Compact terminal titles: host + directory (`MacBook — ~/Projects/foo`)
+# instead of the default `user@host:dir`. Bare `%~` alone looked empty.
+ZSH_THEME_TERM_TITLE_IDLE='%m — %~'
+
 # User configuration
 
 # Larger history makes ghost-text suggestions more useful.

@@ -1,51 +1,54 @@
-window-height=30
+# Ghostty config — canonical location: ~/.config/ghostty/config
+# Migrated from ~/Library/Application Support/com.mitchellh.ghostty/config.ghostty on 2026-10-01
+# Fix: Cmd+T (new_tab) was opening a separate window / messy tab behavior.
 
-window-width=110
+window-height = 30
+window-width = 110
 
-title="Mac OS X Terminal"
+# No hardcoded `title` — let shell integration set a contextual title
+# (current directory / running command) per tab.
 
-window-title-font-family="MonoLisa Variable"
-
-font-family="MonoLisa Variable"
-
-font-size=12
-
-font-feature=-liga
-
-font-thicken=true
-
+window-title-font-family = "MonoLisa Variable"
+font-family = "MonoLisa Variable"
+font-size = 12
+font-feature = -liga
 font-feature = -calt
-
 font-feature = -dlig
-
+font-thicken = true
 adjust-cell-height = 9%
 
 mouse-scroll-multiplier = 0.5
 
-macos-titlebar-style = tabs
+# --- Tabs (the fix) ---
+# Use the default titlebar so the native tab bar renders normally.
+# (`tabs` merges tabs into the titlebar but its controls are squished/
+# cut off on macOS 27 with Ghostty 1.3.1 — upstream issue #13001.)
+macos-titlebar-style = transparent
+# Minimal header: hide the folder proxy icon, show dynamic titles only.
+macos-titlebar-proxy-icon = hidden
+# New tabs go next to the current tab (use `end` if you prefer them at the end).
+window-new-tab-position = current
+# Dock drops / external opens become tabs, not windows.
+macos-dock-drop-behavior = new-tab
+# Make Cmd+T unambiguously create a tab (Cmd+N stays as new window).
+keybind = super+t=new_tab
+keybind = super+n=new_window
 
 background-opacity = 0.9
-
-background-blur-radius = 20
+background-blur = 20
 
 selection-invert-fg-bg = true
-
 bold-is-bright = true
-
 minimum-contrast = 2
 
 cursor-style = block
-
 cursor-style-blink = true
-
 cursor-invert-fg-bg = true
-
-cursor-opacity = .8
+cursor-opacity = 0.8
 
 shell-integration-features = no-cursor
 
 window-padding-x = 15
-
 window-padding-y = 10
 
 copy-on-select = clipboard

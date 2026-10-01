@@ -9,7 +9,7 @@ Ghostty, Obsidian, then the tiling. Same palette, same font, same tab shape.
 <p align="center">
   <img src="screenshots/ghostty-terminal.jpg" alt="Ghostty terminal" width="900">
 </p>
-<p align="center"><em>Ghostty. MonoLisa, block cursor, title still says Mac OS X Terminal.</em></p>
+<p align="center"><em>Ghostty. MonoLisa, block cursor, transparent bar with host + directory titles.</em></p>
 
 <p align="center">
   <img src="screenshots/obsidian-window.jpg" alt="Obsidian with the Ghostty theme" width="900">
@@ -31,10 +31,10 @@ The forest behind those windows. Orange leaves, dark trees. [Download](https://g
 
 ## What's here
 
-- `ghostty/config` is the terminal. MonoLisa, no ligatures, block cursor, a little blur.
-- `aerospace.toml` is letter workspaces and i3-style keys. Alt-enter opens Ghostty. New windows get shoved onto a workspace instead of spawning on top of whatever I was doing.
+- `ghostty/config` is the terminal. MonoLisa, no ligatures, block cursor, a little blur. Transparent titlebar with the proxy icon hidden, `Cmd+T`/`Cmd+N` pinned to new tab/new window, and no hardcoded title so each tab names itself. `install.sh` links only `~/.config/ghostty/config` — linking the same file into `~/Library/Application Support/...` too makes Ghostty load it multiple times and duplicate list keys.
+- `aerospace.toml` is letter workspaces and i3-style keys. Alt-enter opens Ghostty. New windows get shoved onto a workspace instead of spawning on top of whatever I was doing. Ghostty is the exception: it floats on G, because its native tabs look like separate windows to AeroSpace and tiling them tears tabs apart.
 - `leader-key/config.json` is the Leader Key tree. Caps Lock and L opens it. Most of the AeroSpace CLI lives under `a` and `w` so I don't have to bind every verb to Alt. `bin/macos-*` are the lock, sleep, and mute helpers those sequences call.
-- `zsh/` is Oh My Zsh with robbyrussell, a big history, and fzf-tab so Tab is a fuzzy finder instead of a menu.
+- `zsh/` is Oh My Zsh with robbyrussell, a big history, and fzf-tab so Tab is a fuzzy finder instead of a menu. Terminal titles are shortened to `host — dir` instead of the default `user@host:dir`.
 - `obsidian/` is the Ghostty theme, a chrome snippet that hides the ribbon, and the plugin settings that make the window feel closer to the terminal.
 - `borders/bordersrc` is JankyBorders. AeroSpace starts it so the focused window has a ring.
 - `vorssaint/Vorssaint Settings.plist` is a Vorssaint settings backup. Shortcuts, menu bar meters, screenshot keys, that kind of thing. Not clipboard history, not Scratchpad notes.
@@ -108,7 +108,9 @@ Raycast is still search. If I remember the sequence, Leader Key is faster. If I 
 
 ## A couple of opinions
 
-I kept the Ghostty title "Mac OS X Terminal" because I think it's funny. The padding and cell height are fussy on purpose. Default Ghostty feels a bit tight on a Retina screen.
+I used to keep the Ghostty title "Mac OS X Terminal" because I thought it was funny. Now the title comes from the shell: host + directory at idle, the command name while something runs. The padding and cell height are fussy on purpose. Default Ghostty feels a bit tight on a Retina screen.
+
+On macOS 27 the `tabs` titlebar style squishes Ghostty's tab controls into the corner (upstream issue #13001 on 1.3.1), so this uses `transparent` until a fixed build lands.
 
 Obsidian translucency is easy to overdo. The theme uses a high alpha so you get a tint of the wallpaper, not the wallpaper showing through your notes. The snippet keeps blur off the editor scroller. Blur on that layer made scrolling flicker.
 
