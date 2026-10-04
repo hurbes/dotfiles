@@ -79,6 +79,7 @@ I skip H, J, K, and L because those keys move focus.
 | --- | --- |
 | A | Antigravity |
 | B | browsers |
+| C | Codex (ChatGPT app) |
 | D | Docker |
 | G | Ghostty |
 | I | Imark |
@@ -86,7 +87,7 @@ I skip H, J, K, and L because those keys move focus.
 | Q | Free Download Manager |
 | W | WhatsApp |
 
-S and X are free. Alt plus the letter jumps to it. Alt-shift plus the letter takes the current window with you.
+E, S and X are free. Alt plus the letter jumps to it. Alt-shift plus the letter takes the current window with you.
 
 ## Leader Key and AeroSpace
 
@@ -100,8 +101,8 @@ Leader Key is the long tail, and launching.
 
 - `w` then a letter jumps workspaces when I don't want to hold Alt, or I blanked on which letter is which. `a b` is back and forth.
 - `a` is AeroSpace verbs I don't want as global chords. `a w h` swaps with the window on the left. `a m n` moves this window to notes and follows. `a l t` flips tiles. `a s v` splits vertical. `a j l` joins right. `a x o` closes everything else on the workspace. `a r` reloads the config.
-- `p` is project slots. `p n` is a new Cursor window. `p t` is a new Ghostty. Then `p a` through `p e` (and s, w, x) parks that window on a workspace and goes there. A fresh Cursor still gets assigned to C by `on-window-detected`. The slot keys are for when I want extra Cursor windows on S and X instead of stacking them all on C.
-- `t`, `c`, `b` launch Ghostty, Cursor, Dia. AeroSpace puts them on G, C, B. Focus stays on the workspace I was in, which is what I want when I'm firing something off in the background.
+- `p` is project slots. `p n` is a new Cursor window. `p t` is a new Ghostty. Then `p a` through `p e` (and s, w, x) parks that window on a workspace and goes there. A fresh Codex still gets assigned to C by `on-window-detected`. The slot keys are for when I want extra Codex windows parked elsewhere instead of stacking them all on C.
+- `t`, `c`, `b` launch Ghostty, Cursor, Dia. AeroSpace puts Ghostty on G, Codex on C, Dia on B. Cursor windows stay where opened. Focus stays on the workspace I was in, which is what I want when I'm firing something off in the background.
 - `o`, `s`, `m`, `u`, `d` are apps, system, media, URLs, folders. Not tiling. Lock screen is `s l`. They're here so I don't also keep a Raycast alias for the same things.
 
 Raycast is still search. If I remember the sequence, Leader Key is faster. If I don't, I search.
