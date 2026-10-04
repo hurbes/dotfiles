@@ -20,7 +20,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Letter workspaces — skip H/J/K/L (focus/move) like the AeroSpace default
-persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "W", "X"]
+persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "W", "X", "Z"]
 
 on-mode-changed = []
 
@@ -55,6 +55,7 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
     { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
     { if = 'test %{app-bundle-id} = org.freedownloadmanager.fdm6', run = 'move-node-to-workspace Q' },
+    { if = 'test %{app-bundle-id} = dev.zed.Zed', run = 'move-node-to-workspace Z' },
 ]
 
 [mode.main.binding]
@@ -99,6 +100,7 @@ on-window-detected = [
     alt-s = 'workspace S'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
+    alt-z = 'workspace Z'
 
     # Move window to workspace and follow (pairs with Leader Key w … / a m … / p a–e)
     alt-shift-a = 'move-node-to-workspace A; workspace A'
@@ -114,6 +116,7 @@ on-window-detected = [
     alt-shift-s = 'move-node-to-workspace S; workspace S'
     alt-shift-w = 'move-node-to-workspace W; workspace W'
     alt-shift-x = 'move-node-to-workspace X; workspace X'
+    alt-shift-z = 'move-node-to-workspace Z; workspace Z'
 
     alt-tab = 'workspace-back-and-forth'
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'

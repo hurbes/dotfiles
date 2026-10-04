@@ -102,6 +102,12 @@
           "label": "Workspace Q",
           "type": "command",
           "value": "/opt/homebrew/bin/aerospace workspace Q"
+        },
+        {
+          "key": "z",
+          "label": "Workspace Z",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace workspace Z"
         }
       ]
     },
@@ -167,7 +173,7 @@
         },
         {
           "key": "m",
-          "label": "Move window to…",
+          "label": "Move window to\u2026",
           "type": "group",
           "actions": [
             {
@@ -247,6 +253,12 @@
               "label": "WS X + follow",
               "type": "command",
               "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace X; workspace X'"
+            },
+            {
+              "key": "z",
+              "label": "WS Z + follow",
+              "type": "command",
+              "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace Z; workspace Z'"
             }
           ]
         },
@@ -545,6 +557,12 @@
           "label": "Slot X: move + go",
           "type": "command",
           "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace X; workspace X'"
+        },
+        {
+          "key": "z",
+          "label": "Slot Z: move + go",
+          "type": "command",
+          "value": "/opt/homebrew/bin/aerospace eval 'move-node-to-workspace Z; workspace Z'"
         }
       ]
     },
