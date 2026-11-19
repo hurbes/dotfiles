@@ -68,6 +68,8 @@ clone_plugin() {
 }
 
 link "$REPO/aerospace.toml" "$HOME/.aerospace.toml"
+link "$REPO/aerospace/stay-on-workspace.py" "$HOME/.config/aerospace/stay-on-workspace.py"
+link "$REPO/aerospace/whisky-minimize-others.sh" "$HOME/.config/aerospace/whisky-minimize-others.sh"
 # Ghostty reads a single config: ~/.config/ghostty/config. Linking the same
 # file into ~/Library/Application Support/... as well makes Ghostty load it
 # multiple times and duplicate every list-style key (font-feature, keybind).

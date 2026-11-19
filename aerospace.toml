@@ -1,10 +1,15 @@
-# AeroSpace config — tuned for M2 Max MacBook (single display, Ghostty + Codex)
+# AeroSpace config — tuned for M2 Max MacBook (+ external display when docked, Ghostty + Codex)
 # Docs: https://nikitabobko.github.io/AeroSpace/guide
 
 config-version = 2
 
-# JankyBorders highlights the focused window; it skips launch if already running
-after-startup-command = ['exec-and-forget borders']
+# borders: JankyBorders highlights the focused window; skips launch if already running
+# stay-on-workspace.py: after Cmd+Q / closing the last window, stay on that (now
+# empty) workspace instead of following macOS focus to another app's workspace
+after-startup-command = [
+    'exec-and-forget borders',
+    'exec-and-forget /usr/bin/python3 ~/.config/aerospace/stay-on-workspace.py',
+]
 
 start-at-login = true
 auto-reload-config = true
@@ -20,7 +25,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Letter workspaces — skip H/J/K/L (focus/move) like the AeroSpace default
-persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "W", "X", "Z"]
+persistent-workspaces = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "X", "Z"]
 
 on-mode-changed = []
 
@@ -45,18 +50,32 @@ on-window-detected = [
     { if = 'test %{app-bundle-id} = com.apple.finder', run = 'layout floating' },
     { if = 'test %{app-bundle-id} = com.apple.calculator', run = 'layout floating' },
 
-    { if = 'test %{app-bundle-id} = com.openai.codex', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = com.openai.codex || test %{app-bundle-id} = com.anthropic.claudefordesktop', run = 'move-node-to-workspace C' },
+    { if = 'test %{app-bundle-id} = com.t3tools.t3code', run = 'move-node-to-workspace X' },
     { if = 'test %{app-bundle-id} = com.google.antigravity', run = 'move-node-to-workspace A' },
     { if = 'test %{app-bundle-id} = company.thebrowser.dia || test %{app-bundle-id} = com.brave.Browser || test %{app-bundle-id} = com.apple.Safari', run = 'move-node-to-workspace B' },
-    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = ['layout floating', 'move-node-to-workspace G'] },
+    { if = 'test %{app-bundle-id} = com.mitchellh.ghostty', run = ['layout floating', 'move-node-to-workspace T'] },
+    # Whisky and every window it spawns (games run as "wine" with no bundle id) go to G;
+    # the newest one stays up and the earlier ones are minimized (see the script).
+    { if = "test %{app-bundle-id} = com.franke.Whisky || test %{app-name} ~= '^wine.*$'", run = ['move-node-to-workspace G', 'exec-and-forget ~/.config/aerospace/whisky-minimize-others.sh'] },
     { if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp', run = 'move-node-to-workspace W' },
     { if = 'test %{app-bundle-id} = com.anysphere.sand', run = 'move-node-to-workspace F' },
     { if = 'test %{app-bundle-id} = com.docker.docker || test %{app-bundle-id} = com.electron.dockerdesktop', run = 'move-node-to-workspace D' },
     { if = 'test %{app-bundle-id} = pt.miguelsilva.imark', run = 'move-node-to-workspace I' },
-    { if = 'test %{app-bundle-id} = md.obsidian', run = 'move-node-to-workspace N' },
+    { if = 'test %{app-bundle-id} = md.obsidian || test %{app-bundle-id} = com.granola.app', run = 'move-node-to-workspace N' },
     { if = 'test %{app-bundle-id} = org.freedownloadmanager.fdm6', run = 'move-node-to-workspace Q' },
     { if = 'test %{app-bundle-id} = dev.zed.Zed', run = 'move-node-to-workspace Z' },
+    { if = 'test %{app-bundle-id} = com.spotify.client', run = 'move-node-to-workspace S' },
 ]
+
+# Pin the browser workspace to the external display whenever one is connected.
+# Patterns are tried in order: first any monitor whose name does NOT start with
+# "built-in" (the external), then the main monitor — so undocked, B just lives on
+# the laptop screen again. Unplug/replug re-resolves automatically; windows that
+# open on B (see on-window-detected) follow it. Note: move-workspace-to-monitor
+# is a no-op for force-assigned workspaces, which is why B is pinned, not roamed.
+[workspace-to-monitor-force-assignment]
+    B = ['^(?!built-in)', 'main']
 
 [mode.main.binding]
     # i3-style terminal (Ghostty)
@@ -98,6 +117,7 @@ on-window-detected = [
     alt-n = 'workspace N'
     alt-q = 'workspace Q'
     alt-s = 'workspace S'
+    alt-t = 'workspace T'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
     alt-z = 'workspace Z'
@@ -114,6 +134,7 @@ on-window-detected = [
     alt-shift-n = 'move-node-to-workspace N; workspace N'
     alt-shift-q = 'move-node-to-workspace Q; workspace Q'
     alt-shift-s = 'move-node-to-workspace S; workspace S'
+    alt-shift-t = 'move-node-to-workspace T; workspace T'
     alt-shift-w = 'move-node-to-workspace W; workspace W'
     alt-shift-x = 'move-node-to-workspace X; workspace X'
     alt-shift-z = 'move-node-to-workspace Z; workspace Z'
@@ -121,7 +142,34 @@ on-window-detected = [
     alt-tab = 'workspace-back-and-forth'
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+    # Multi-display: m = monitor. Jump focus / send window / shuffle all workspaces
+    alt-m = 'focus-monitor --wrap-around next'
+    alt-shift-m = 'move-node-to-monitor --wrap-around --focus-follows-window next'
+    alt-ctrl-m = 'mode monitor'
+
     alt-shift-semicolon = 'mode service'
+
+# Per-display management. alt-ctrl-m to enter, esc/enter to leave.
+#   h/l   focus the monitor to the left/right     shift-h/l  send window there
+#   1/2/3 focus monitor by position (left→right)  shift-1/2/3 send window there
+#   w     move current workspace to next monitor (unpinned workspaces only)
+[mode.monitor.binding]
+    h = 'focus-monitor left'
+    l = 'focus-monitor right'
+    shift-h = ['move-node-to-monitor --focus-follows-window left', 'mode main']
+    shift-l = ['move-node-to-monitor --focus-follows-window right', 'mode main']
+
+    1 = ['focus-monitor 1', 'mode main']
+    2 = ['focus-monitor 2', 'mode main']
+    3 = ['focus-monitor 3', 'mode main']
+    shift-1 = ['move-node-to-monitor --focus-follows-window 1', 'mode main']
+    shift-2 = ['move-node-to-monitor --focus-follows-window 2', 'mode main']
+    shift-3 = ['move-node-to-monitor --focus-follows-window 3', 'mode main']
+
+    w = ['move-workspace-to-monitor --wrap-around next', 'mode main']
+
+    esc = 'mode main'
+    enter = 'mode main'
 
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
